@@ -1,6 +1,14 @@
+import { useState } from "react";
+
 const Section6 = () => {
+  const [myth1, setMyth1] = useState(true);
+  const [myth2, setMyth2] = useState(true);
+  const [myth3, setMyth3] = useState(true);
+  const [myth4, setMyth4] = useState(true);
+
   return (
-    <div className="bg-black text-white">
+    <div className="bg-black text-white relative z-50" id="depression">
+      <h1 className="text-white text-6xl font-indie px-20">Depression</h1>
       <div className="flex justify-center items-center text-center p-20 font-poppins font-semibold text-2xl">
         <p>
           Depression is a low mood that lasts for a long time, affecting
@@ -16,47 +24,108 @@ const Section6 = () => {
       </div>
 
       <div className="flex flex-row overflow-x-auto gap-4 p-6">
-        <div className="p-6 text-center flex flex-col font-poppins font-semibold text-white w-1/4  flex-shrink-0 items-center justify-center shadow-text border-2 border-white rounded-lg">
-          <p>
-            Approximately 3.7% (9 million) people are suffering from depression,
-            out of a population of 250 million people.
-          </p>
-          <p className="text-white py-4">MYTH</p>
+        <div
+          onClick={() => setMyth1((prev) => !prev)}
+          className={`p-6 h-[300px] cursor-pointer transition duration-300 ease-in-out text-center flex flex-col font-poppins font-semibold text-white w-1/4  flex-shrink-0 items-center justify-center shadow-text border-2 border-white rounded-lg ${
+            myth1 ? "" : "bg-[#00719D]"
+          }`}
+        >
+          {myth1 ? (
+            <p className="text-xl">Depression is about feeling sad.</p>
+          ) : (
+            <p>
+              Persistent feelings of sadness are one of the symptoms of
+              depression. However, depression also involves physical symptoms
+              such as changes in appetite and quality of sleep, emotional
+              symptoms such as feelings of worthlessness, and changes in
+              behavior such as the loss of interest in our usual activities. For
+              people experiencing depression, these symptoms continue for more
+              than two weeks.
+            </p>
+          )}
+
+          {myth1 ? (
+            <p className="text-white py-4">MYTH</p>
+          ) : (
+            <p className="text-white py-4">FACT</p>
+          )}
         </div>
-        <div className="p-6 text-center flex flex-col font-poppins font-semibold text-white w-1/4  flex-shrink-0 items-center justify-center shadow-text border-2 border-white rounded-lg">
-          <p>
-            Around 6% (14 million) of people aged 15 and over suffer from mood
-            disorders such as depression and anxiety.
-          </p>
-          <p className="text-white py-4">MYTH</p>
+        <div
+          onClick={() => setMyth2((prev) => !prev)}
+          className={`p-6 h-[300px] cursor-pointer transition duration-300 ease-in-out text-center flex flex-col font-poppins font-semibold text-white w-1/4  flex-shrink-0 items-center justify-center shadow-text border-2 border-white rounded-lg ${
+            myth2 ? "" : "bg-[#00719D]"
+          }`}
+        >
+          {myth2 ? (
+            <p className="text-xl"> Depression is a sign of weakness.</p>
+          ) : (
+            <p>
+              Depression is not a sign of weakness but a medical condition.
+              Depression is a chemical imbalance in the brain that can be
+              treated. Depression is unrelated to the strength of someone s
+              character; it is a serious medical condition like asthma or
+              diabetes. Depression is often triggered by major life events that
+              may be challenging to cope with, e.g., the loss of a loved one,
+              the loss of a job, etc.
+            </p>
+          )}
+
+          {myth2 ? (
+            <p className="text-white py-4">MYTH</p>
+          ) : (
+            <p className="text-white py-4">FACT</p>
+          )}
         </div>
-        <div className="p-6 text-center flex flex-col font-poppins font-semibold text-white w-1/4 flex-shrink-0 flex-col items-center justify-center shadow-text border-2 border-white rounded-lg">
-          <p>
-            Around 19 million people aged 15 and over suffer from mood disorders
-            and 12 million people suffer from depression.
-          </p>
-          <p className="text-white py-4">MYTH</p>
+        <div
+          onClick={() => setMyth3((prev) => !prev)}
+          className={`p-6 h-[300px] cursor-pointer transition duration-300 ease-in-out text-center flex flex-col font-poppins font-semibold text-white w-1/4  flex-shrink-0 items-center justify-center shadow-text border-2 border-white rounded-lg ${
+            myth3 ? "" : "bg-[#00719D]"
+          }`}
+        >
+          {myth3 ? (
+            <p className="text-xl">
+              People feel that I do not need a doctor because they think that I
+              am lazy rather than depressed.
+            </p>
+          ) : (
+            <p>
+              Depression takes away a lot of energy from a person. Loss of
+              interest in usual activities is common and should not be
+              misunderstood as a sign of laziness.
+            </p>
+          )}
+
+          {myth3 ? (
+            <p className="text-white py-4">MYTH</p>
+          ) : (
+            <p className="text-white py-4">FACT</p>
+          )}
         </div>
-        <div className="p-6 text-center flex flex-col font-poppins font-semibold text-white w-1/4 flex-shrink-0 flex-col items-center justify-center shadow-text border-2 border-white rounded-lg">
-          <p>Around 2% (72.860 people) suffer from bipolar disorder.</p>
-          <p className="text-white py-4">MYTH</p>{" "}
-        </div>
-        <div className="p-6 text-center flex flex-col font-poppins font-semibold text-white w-1/4 flex-shrink-0 flex-col items-center justify-center shadow-text border-2 border-white rounded-lg">
-          <p>
-            One in three Indonesian adolescents experienced a mental health
-            problem in the past 12 months, while one in twenty Indonesian
-            adolescents had a mental disorder in the past 12 months.
-          </p>
-          <p className="text-white py-4">MYTH</p>
-        </div>
-        <div className="p-6 text-center flex flex-col font-poppins font-semibold text-white w-1/4  flex-shrink-0 flex-col items-center justify-center shadow-text border-2 border-white rounded-lg">
-          <p>
-            The most common mental disorders suffered by adolescents were
-            anxiety disorders (a combination of social phobia and generalized
-            anxiety disorder) at 3.7%, followed by major depressive disorder
-            (1.0%), conduct disorder (0.9%), and PTSD and ADHD (both 0.5%).
-          </p>
-          <p className="text-white py-4">MYTH</p>
+        <div
+          onClick={() => setMyth4((prev) => !prev)}
+          className={`p-6 h-[300px] cursor-pointer transition duration-300 ease-in-out text-center flex flex-col font-poppins font-semibold text-white w-1/4  flex-shrink-0 items-center justify-center shadow-text border-2 border-white rounded-lg ${
+            myth4 ? "" : "bg-[#00719D]"
+          }`}
+        >
+          {myth4 ? (
+            <p className="text-xl">
+              I am afraid to talk about my depression, for fear that it will
+              make it worse.
+            </p>
+          ) : (
+            <p>
+              Talking about your feelings allows you to air your problems, seek
+              assurance and find solutions. You may want to talk to a trained
+              counselor who can help you walk through your depression. All
+              information given is kept strictly confidential.
+            </p>
+          )}
+
+          {myth4 ? (
+            <p className="text-white py-4">MYTH</p>
+          ) : (
+            <p className="text-white py-4">FACT</p>
+          )}
         </div>
       </div>
     </div>

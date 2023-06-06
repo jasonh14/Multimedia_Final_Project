@@ -1,4 +1,5 @@
 import bg5 from "src/assets/bg-5.svg";
+import { Parallax } from "react-scroll-parallax";
 
 const Section5 = () => {
   return (
@@ -10,7 +11,9 @@ const Section5 = () => {
           the ratio of just 0.01 psychiatrists for every 100,000 people.
         </p>
       </div>
-      <img src={bg5} alt="bg" />
+      <Parallax speed={-10}>
+        <img src={bg5} alt="bg" className="relative -z-50" />
+      </Parallax>
     </div>
   );
 };

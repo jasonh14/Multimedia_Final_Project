@@ -4,7 +4,7 @@ import map from "src/assets/map.svg";
 const Section4 = () => {
   return (
     <div className="bg-[#00719D] flex flex-col items-center">
-      <div>
+      <div className="relative z-50">
         <img src={map} alt="map" />
       </div>
       <div>
