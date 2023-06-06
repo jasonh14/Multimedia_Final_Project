@@ -1,9 +1,40 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import bg_3 from "src/assets/bg-3.png";
 import { motion } from "framer-motion";
 import { Parallax } from "react-scroll-parallax";
+import drowning from "src/assets/drowning.mp3";
 
 const Section3 = () => {
+  const soundRef = useRef(null);
+  const myElementRef = useRef(null);
+  const [soundPlayed, setSoundPlayed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!soundPlayed) {
+        const elementPosition =
+          myElementRef.current.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        // Adjust the condition as per your requirements
+        if (elementPosition < windowHeight * 0.75) {
+          // Play the sound
+          soundRef.current.volume = 0.1;
+          soundRef.current.play();
+          setSoundPlayed(true);
+        }
+      }
+    };
+
+    // Attach scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      // Clean up the scroll event listener
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [soundPlayed]);
+
   return (
     <div className="bg-[#00719D] text-center pb-28">
       <div className="text-white font-indie text-6xl relative z-20">
@@ -24,11 +55,11 @@ const Section3 = () => {
         </motion.div>
 
         <Parallax speed={-20}>
-          <div className="relative -z-50">
+          <div ref={myElementRef} className="relative -z-50">
             <img src={bg_3} alt="" />
           </div>
         </Parallax>
-
+        <audio ref={soundRef} src={drowning} />
         <motion.div
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}

@@ -13,7 +13,7 @@ const Section9 = () => {
   const [showDepressed, setDepressed] = useState(false);
 
   return (
-    <div className="bg-[#F2F4F7]">
+    <div className="bg-[#F2F4F7] relative z-50">
       <div>
         <h1 id="bipolar" className="text-center font-indie text-6xl">
           Bipolar

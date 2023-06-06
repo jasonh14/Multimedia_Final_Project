@@ -3,6 +3,8 @@ import bg from "src/assets/bg.svg";
 import { TypeAnimation } from "react-type-animation";
 import whoosh from "src/assets/whoosh.mp3";
 import menu from "src/assets/hover.mp3";
+import { motion } from "framer-motion";
+import { Parallax } from "react-scroll-parallax";
 
 const Section1 = () => {
   const audioRef = useRef(null);
@@ -31,7 +33,15 @@ const Section1 = () => {
       </audio>
       <div className="bg-black text-white font-indie flex flex-col justify-center items-center pt-6">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-8xl pt-6">Mental Health</h1>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1.5,
+            }}
+          >
+            <h1 className="text-8xl pt-6">Mental Health</h1>
+          </motion.div>
           <div className="py-6">
             <TypeAnimation
               sequence={[

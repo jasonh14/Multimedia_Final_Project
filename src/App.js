@@ -14,6 +14,7 @@ import { useRef, useState } from "react";
 import audioon from "src/assets/audioon.png";
 import mute from "src/assets/mute.png";
 import { ParallaxProvider } from "react-scroll-parallax";
+import music2 from "src/assets/music2.mp3";
 
 function App() {
   const [showAudio, setShowAudio] = useState(true);
@@ -21,7 +22,7 @@ function App() {
 
   const startAudio = () => {
     audioRef.current.play();
-    audioRef.current.volume = 0.05;
+    audioRef.current.volume = 0.1;
     setShowAudio(false);
   };
 
@@ -48,10 +49,12 @@ function App() {
           <img className="w-100 h-100" src={mute} alt="test" />
         </div>
       </div>
-      <audio src={audio} loop ref={audioRef} controls={false}>
+      <audio src={music2} ref={audioRef} controls={false}>
         Your browser does not support the audio element.
       </audio>
+
       <Section1 />
+
       <Section2 />
       <ParallaxProvider>
         <Section3 />
@@ -62,7 +65,9 @@ function App() {
       </ParallaxProvider>
       <Section6 />
       <Section7 />
-      <Section8 />
+      <ParallaxProvider>
+        <Section8 />
+      </ParallaxProvider>
       <Section9 />
       <Section10 />
     </div>
