@@ -1,19 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import map from "src/assets/map.svg";
+import { motion } from "framer-motion";
 
 const Section4 = () => {
   return (
     <div className="bg-[#00719D] flex flex-col items-center">
-      <div className="relative z-50">
+      <motion.div
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.5, duration: 1 }}
+        className="relative z-50"
+      >
         <img src={map} alt="map" />
-      </div>
+      </motion.div>
       <div>
-        <h1 className="font-indie text-6xl text-white py-6">
-          Mental Health Conditions in Indonesia
+        <h1 className="font-indie md:text-6xl text-xl text-white py-6">
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.5, duration: 1 }}
+          >
+            Mental Health Conditions in Indonesia
+          </motion.div>
         </h1>
       </div>
       <div className="flex flex-row overflow-x-auto gap-4 p-6">
-        <div className="p-6 text-center flex flex-col font-poppins font-semibold text-white w-1/4  flex-shrink-0 items-center justify-center shadow-text border-2 border-white rounded-lg">
+        <div className="p-6 text-center flex flex-col font-poppins font-semibold text-white md:w-1/4 w-[300px]  flex-shrink-0 items-center justify-center shadow-text border-2 border-white rounded-lg">
           <p>
             Approximately 3.7% (9 million) people are suffering from depression,
             out of a population of 250 million people.

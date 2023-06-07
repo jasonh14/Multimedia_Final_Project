@@ -40,9 +40,11 @@ const Section1 = () => {
               duration: 1.5,
             }}
           >
-            <h1 className="text-8xl pt-6">Mental Health</h1>
+            <h1 className="md:text-8xl text-center text-4xl pt-6">
+              Mental Health
+            </h1>
           </motion.div>
-          <div className="py-6">
+          <div className="py-6 text-sm md:text-xl">
             <TypeAnimation
               sequence={[
                 "Does it haunt you?", // Types 'One'
@@ -53,36 +55,66 @@ const Section1 = () => {
               wrapper="span"
               cursor={true}
               repeat={0}
-              style={{ fontSize: "2em", display: "inline-block" }}
+              style={{ display: "inline-block" }}
             />
           </div>
         </div>
-        <div className="flex justify-center relative w-1/2">
-          <a
-            href="#bipolar"
-            className="absolute top-20 text-2xl rotate-12 hover:scale-125 transition duration-300 ease-in-out"
-            onMouseEnter={startAudio}
-            onClick={startWhoosh}
+        <div className="flex justify-center relative  p-6">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
           >
-            Bipolar ?
-          </a>
-          <a
-            href="#depression"
-            className="absolute text-2xl top-32 right-[600px] -rotate-12  hover:scale-125 transition duration-300 ease-in-out"
-            onMouseEnter={startAudio}
-            onClick={startWhoosh}
-          >
-            Depression ?
-          </a>
-          <a
-            href="#anxiety"
-            className="absolute text-2xl top-32 left-[600px] rotate-12  hover:scale-125 transition duration-300 ease-in-out"
-            onMouseEnter={startAudio}
-            onClick={startWhoosh}
-          >
-            Anxiety ?
-          </a>
-          <img src={bg} alt="bg" />
+            <img src={bg} alt="bg" />
+          </motion.div>
+
+          <div className="absolute w-full flex flex-row md:gap-36 justify-center pt-28">
+            <a
+              href="#depression"
+              className="text-2xl top-32  -rotate-12  hover:scale-125 transition duration-300 ease-in-out"
+              onMouseEnter={startAudio}
+              onClick={startWhoosh}
+            >
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.7, duration: 1 }}
+                className="w-[150px] flex justify-center text-sm md:text-2xl"
+              >
+                Depression ?
+              </motion.div>
+            </a>
+            <a
+              href="#bipolar"
+              className=" text-2xl rotate-12 hover:scale-125 transition duration-300 ease-in-out mt-[-50px]"
+              onMouseEnter={startAudio}
+              onClick={startWhoosh}
+            >
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.5, duration: 1 }}
+                className="w-[100px] flex justify-center text-sm md:text-2xl"
+              >
+                Bipolar ?
+              </motion.div>
+            </a>
+            <a
+              href="#anxiety"
+              className=" text-2xl top-32  rotate-12  hover:scale-125 transition duration-300 ease-in-out"
+              onMouseEnter={startAudio}
+              onClick={startWhoosh}
+            >
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 1, duration: 1 }}
+                className="w-[100px] flex justify-center text-sm md:text-2xl"
+              >
+                Anxiety ?
+              </motion.div>
+            </a>
+          </div>
         </div>
       </div>
     </>

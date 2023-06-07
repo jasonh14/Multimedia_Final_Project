@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const Section6 = () => {
   const [myth1, setMyth1] = useState(true);
@@ -8,25 +9,47 @@ const Section6 = () => {
 
   return (
     <div className="bg-black text-white relative z-50" id="depression">
-      <h1 className="text-white text-6xl font-indie px-20">Depression</h1>
-      <div className="flex justify-center items-center text-center p-20 font-poppins font-semibold text-2xl">
+      <h1 className="text-white text-3xl md:text-6xl font-indie px-20">
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5, duration: 1 }}
+        >
+          Depression
+        </motion.div>
+      </h1>
+      <div className="flex justify-center items-center text-center p-4 md:p-20 font-poppins font-semibold md:text-2xl">
         <p>
-          Depression is a low mood that lasts for a long time, affecting
-          everyday life. It is often triggered by a mix of genetic,
-          psychological and environmental factors; studies show that the risk of
-          becoming depressed can be increased by life events such as poverty,
-          the death of a loved one, physical illness, or abuse. For some, the
-          risk is also hereditary.
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1, duration: 1 }}
+          >
+            Depression is a low mood that lasts for a long time, affecting
+            everyday life. It is often triggered by a mix of genetic,
+            psychological and environmental factors; studies show that the risk
+            of becoming depressed can be increased by life events such as
+            poverty, the death of a loved one, physical illness, or abuse. For
+            some, the risk is also hereditary.
+          </motion.div>
         </p>
       </div>
       <div>
-        <h1 className="text-center text-6xl font-indie">Misconceptions</h1>
+        <h1 className="text-center text-3xl md:text-6xl font-indie">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 1 }}
+          >
+            Misconceptions
+          </motion.div>
+        </h1>
       </div>
 
       <div className="flex flex-row overflow-x-auto gap-4 p-6">
         <div
           onClick={() => setMyth1((prev) => !prev)}
-          className={`p-6 h-[300px] cursor-pointer transition duration-300 ease-in-out text-center flex flex-col font-poppins font-semibold text-white w-1/4  flex-shrink-0 items-center justify-center shadow-text border-2 border-white rounded-lg ${
+          className={`p-6  cursor-pointer transition duration-300 ease-in-out text-center flex flex-col font-poppins font-semibold text-white md:w-1/4 w-[300px]  flex-shrink-0 items-center justify-center shadow-text border-2 border-white rounded-lg ${
             myth1 ? "" : "bg-[#00719D]"
           }`}
         >
@@ -52,7 +75,7 @@ const Section6 = () => {
         </div>
         <div
           onClick={() => setMyth2((prev) => !prev)}
-          className={`p-6 h-[300px] cursor-pointer transition duration-300 ease-in-out text-center flex flex-col font-poppins font-semibold text-white w-1/4  flex-shrink-0 items-center justify-center shadow-text border-2 border-white rounded-lg ${
+          className={`p-6  cursor-pointer transition duration-300 ease-in-out text-center flex flex-col font-poppins font-semibold text-white md:w-1/4 w-[300px]  flex-shrink-0 items-center justify-center shadow-text border-2 border-white rounded-lg ${
             myth2 ? "" : "bg-[#00719D]"
           }`}
         >
@@ -78,7 +101,7 @@ const Section6 = () => {
         </div>
         <div
           onClick={() => setMyth3((prev) => !prev)}
-          className={`p-6 h-[300px] cursor-pointer transition duration-300 ease-in-out text-center flex flex-col font-poppins font-semibold text-white w-1/4  flex-shrink-0 items-center justify-center shadow-text border-2 border-white rounded-lg ${
+          className={`p-6  cursor-pointer transition duration-300 ease-in-out text-center flex flex-col font-poppins font-semibold text-white md:w-1/4 w-[300px]  flex-shrink-0 items-center justify-center shadow-text border-2 border-white rounded-lg ${
             myth3 ? "" : "bg-[#00719D]"
           }`}
         >
@@ -103,7 +126,7 @@ const Section6 = () => {
         </div>
         <div
           onClick={() => setMyth4((prev) => !prev)}
-          className={`p-6 h-[300px] cursor-pointer transition duration-300 ease-in-out text-center flex flex-col font-poppins font-semibold text-white w-1/4  flex-shrink-0 items-center justify-center shadow-text border-2 border-white rounded-lg ${
+          className={`p-6  cursor-pointer transition duration-300 ease-in-out text-center flex flex-col font-poppins font-semibold text-white md:w-1/4 w-[300px]  flex-shrink-0 items-center justify-center shadow-text border-2 border-white rounded-lg ${
             myth4 ? "" : "bg-[#00719D]"
           }`}
         >
